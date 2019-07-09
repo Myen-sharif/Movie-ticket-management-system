@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Online Movie Ticket Booking</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("Cineplex.webp");
+  height: 100%
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+     h2{
+        color:white;
+        text-shadow: 3px 2px rgba(103, 132, 167, 0.81);
+    }
+    
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(68, 69, 72, 0.87);
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 50px;
+  font-size: 20px;
+  
+}  
+
+.theatre {
+  display: flex;
+  position: relative;
+  margin-left: 390px;
+  margin-top: 250px;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f1f1f1;
+    padding-right: 100px;   
+}
+
+.cinema-seats {
+  display: flex;
+}
+.cinema-seats .seat {
+  cursor: pointer;
+}
+.cinema-seats .seat:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+}
+.cinema-seats .seat.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 7px;
+}
+
+.left .cinema-row {
+  transform: skew(-15deg);
+  margin: 0 6px;
+}
+.left .seat {
+  width: 35px;
+  height: 50px;
+  border-radius: 7px;
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+  margin-bottom: 10px;
+  transform: skew(20deg);
+  margin-top: -32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.left .row-2 {
+  transform: skew(-13deg);
+}
+.left .row-2 .seat {
+  transform: skew(18deg);
+}
+.left .row-3 {
+  transform: skew(-12deg);
+}
+.left .row-3 .seat {
+  transform: skew(16deg);
+}
+.left .row-4 {
+  transform: skew(-11deg);
+}
+.left .row-4 .seat {
+  transform: skew(15deg);
+}
+.left .row-5 {
+  transform: skew(-10deg);
+}
+.left .row-5 .seat {
+  transform: skew(12deg);
+}
+.left .row-6 {
+  transform: skew(-9deg);
+}
+.left .row-6 .seat {
+  transform: skew(10deg);
+}
+.left .row-7 {
+  transform: skew(-7deg);
+}
+.left .row-7 .seat {
+  transform: skew(8deg);
+}
+
+.right {
+  margin-left: 70px;
+}
+.right .cinema-row {
+  transform: skew(7deg);
+  margin: 0 6px;
+}
+.right .seat {
+  width: 35px;
+  height: 50px;
+  border-radius: 7px;
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+  margin-bottom: 10px;
+  transform: skew(-8deg);
+  margin-top: -32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.right .row-2 {
+  transform: skew(9deg);
+}
+.right .row-2 .seat {
+  transform: skew(-10deg);
+}
+.right .row-3 {
+  transform: skew(10deg);
+}
+.right .row-3 .seat {
+  transform: skew(-12deg);
+}
+.right .row-4 {
+  transform: skew(11deg);
+}
+.right .row-4 .seat {
+  transform: skew(-15deg);
+}
+.right .row-5 {
+  transform: skew(12deg);
+}
+.right .row-5 .seat {
+  transform: skew(-16deg);
+}
+.right .row-6 {
+  transform: skew(13deg);
+}
+.right .row-6 .seat {
+  transform: skew(-18deg);
+}
+.right .row-7 {
+  transform: skew(15deg);
+}
+.right .row-7 .seat {
+  transform: skew(-20deg);
+}
+    
+  input[type=submit] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+    
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="registration1.html">Registration</a>
+  <a href="#">Ticket Price</a>
+  <a href="#">Contacts</a>
+</div>
+
+<div class="content">
+    
+  <h2>Please Select Your Seat</h2>
+    
+  <div class="theatre">
+  
+  <div class="cinema-seats left">
+    <div class="cinema-row row-1">
+      <div class="seat"><p>A1</p></div>
+      <div class="seat"><p>B1</p></div>
+      <div class="seat"><p>C1</p></div>
+      <div class="seat"><p>D1</p></div>
+      <div class="seat"><p>E1</p></div>
+      <div class="seat"><p>F1</p></div>
+      <div class="seat"><p>G1</p></div>
+    </div>
+
+    <div class="cinema-row row-2">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-3">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-4">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-5">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-6">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-7">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+  </div>
+
+
+  <div class="cinema-seats right">
+    <div class="cinema-row row-1">
+     <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-2">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-3">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-4">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-5">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-6">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+
+    <div class="cinema-row row-7">
+      <div class="seat"><p>A2</p></div>
+      <div class="seat"><p>B2</p></div>
+      <div class="seat"><p>C2</p></div>
+      <div class="seat"><p>D2</p></div>
+      <div class="seat"><p>E2</p></div>
+      <div class="seat"><p>F2</p></div>
+      <div class="seat"><p>G2</p></div>
+    </div>
+  </div>       
+</div>   
+   <input type="submit" value="Submit"> 
+</div>
+    
+
+</body>
+</html>
