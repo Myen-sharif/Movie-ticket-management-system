@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Online Movie Ticket Booking</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("Cineplex.webp");
+  height: 100%
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+    h2{
+        color:white;
+        text-shadow: 3px 2px rgba(103, 132, 167, 0.81);
+        text-align: center;
+        padding-right:20px;
+    }
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(68, 69, 72, 0.87);
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 50px;
+  font-size: 20px;
+    }
+    
+    form {
+    border: 3px solid #f1f1f1;
+    margin-right: 150px;
+    margin-left: 100px; 
+    margin-bottom: 40px; 
+    padding:20px;
+    background-color: rgba(227, 225, 222, 0.55)
+    }
+    
+    input[type=text], input[type=password] ,select, input[type=date],input[type=time],input[type=number] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      position: center;
+  
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.submitbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+} 
+    
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="registration1.html">Registration</a>
+  <a href="#">Ticket Price</a>
+  <a href="#">Contacts</a>
+</div>
+
+<div class="content">
+    
+    <h2><strong>Please Fill In This Form To Pay Your Bill By Mobile Banking system</strong></h2>
+    
+    <form action="{%url 'printticket'%}">
+  <div class="container">
+    
+    
+  
+      
+      <label for="Mbanking"><b>Select Your Mobile Banking System</b></label>
+      <select name="Mbanking">
+          <option value="xxx">Bkash</option>
+          <option value="yyy">Rocket</option>
+          <option value="zzz">Sure Cash</option>
+          <option value="www">Ucash</option>
+      </select>
+      
+      <label for="MAccount"><b>Account No.</b></label>
+      <input type="text" name="MAccount">    
+     
+      <label for="Mpassword"><b>Password</b></label>
+    <input type="Password" name="Mpassword" required>   
+      
+    <hr>
+    
+    <button type="submit" class="submitbtn">Submit</button>
+  </div>
+    
+    </form>
+  
+    <hr>
+    
+    <h2><strong>or Fill In This Form To Pay Your Bill By Cradit Card</strong></h2>
+    
+    <form action="{%url 'printticket'%}">
+  <div class="container">
+      
+      <label for="Account"><b>Account No.</b></label>
+      <input type="text" name="Account">    
+     
+      <label for="password"><b>Password</b></label>
+    <input type="Password" name="password" required>   
+      
+    <hr>
+    
+    <button type="submit" class="submitbtn">Submit</button>
+  </div>
+    
+    </form>
+    
+</div>
+
+</body>
+</html>
